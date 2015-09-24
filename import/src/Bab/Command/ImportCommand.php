@@ -38,5 +38,7 @@ class ImportCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->logger->info('Start importing OSRM bars');
+
+        $this->client->search('node(48.815465,2.248614,48.907167,2.422335)["amenity"="bar"]; out body;');
     }
 }

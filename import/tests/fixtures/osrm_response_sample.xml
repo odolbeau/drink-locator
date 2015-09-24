@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2015-09-24T15:34:01Z"/>
+
+  <node id="247439149" lat="48.8688161" lon="2.3275703">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Bar Hemingway"/>
+  </node>
+  <node id="251023849" lat="48.8691942" lon="2.3321035">
+    <tag k="addr:housenumber" v="5"/>
+    <tag k="addr:postcode" v="75002"/>
+    <tag k="addr:street" v="Rue Daunou"/>
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Harry's Bar"/>
+    <tag k="source" v="www.harrysbar.fr"/>
+    <tag k="website" v="www.harrysbar.fr"/>
+  </node>
+  <node id="252604389" lat="48.8656637" lon="2.3778893">
+    <tag k="amenity" v="bar"/>
+    <tag k="cuisine" v="french"/>
+    <tag k="name" v="Chez Justine"/>
+    <tag k="opening_hours" v="Mo-Su 8:00-2:00"/>
+    <tag k="phone" v="01 43 57 44 03"/>
+    <tag k="website" v="http://www.chezjustine.fr/"/>
+  </node>
+  <node id="294266518" lat="48.8838984" lon="2.3707556">
+    <tag k="addr:city" v="Paris"/>
+    <tag k="addr:housenumber" v="10"/>
+    <tag k="addr:postcode" v="75019"/>
+    <tag k="addr:street" v="Place de la Bataille de Stalingrad"/>
+    <tag k="amenity" v="bar"/>
+    <tag k="layer" v="0"/>
+    <tag k="name" v="25° Est"/>
+  </node>
+  <node id="305903409" lat="48.8847610" lon="2.3245933">
+    <tag k="amenity" v="bar"/>
+    <tag k="bar" v="wine_bar"/>
+    <tag k="name" v="Les Caves Populaires"/>
+    <tag k="phone" v="+33 1 53 04 08 32"/>
+    <tag k="smoking" v="outside"/>
+    <tag k="source" v="survey:2015-04-03"/>
+  </node>
+  <node id="428164786" lat="48.8492104" lon="2.3895170">
+    <tag k="amenity" v="bar"/>
+    <tag k="brewery" v="guinness"/>
+    <tag k="name" v="Patrick's Le Ballon Vert"/>
+    <tag k="old_name" v="Les Milles Lacs"/>
+  </node>
+  <node id="442505759" lat="48.8683391" lon="2.3714311">
+    <tag k="amenity" v="bar"/>
+    <tag k="brewery" v="Jeanlain Six"/>
+    <tag k="name" v="La Caravane"/>
+    <tag k="opening_hours" v="Mo-Su 11:00-2:00"/>
+    <tag k="phone" v="01 49 23 01 86"/>
+    <tag k="website" v="http://www.lacaravane.eu/"/>
+  </node>
+  <node id="442547954" lat="48.8683233" lon="2.3660938">
+    <tag k="addr:housenumber" v="18"/>
+    <tag k="addr:street" v="Rue du Faubourg du Temple"/>
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="La favela Chic"/>
+    <tag k="opening_hours" v="Tu-We 19:30-2:00;Th 19:30-3:00;Fr-Sa 19:30-4:00"/>
+    <tag k="phone" v="01 40 21 38 14"/>
+    <tag k="source" v="cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"/>
+    <tag k="website" v="http://favelachic.com/"/>
+  </node>
+  <node id="446819198" lat="48.8783181" lon="2.3578049">
+    <tag k="amenity" v="bar"/>
+    <tag k="created_by" v="iLOE 1.9"/>
+    <tag k="name" v="Le Delyss"/>
+    <tag k="restaurant" v="yes"/>
+  </node>
+  <node id="493163514" lat="48.8510126" lon="2.4018663">
+    <tag k="amenity" v="bar"/>
+    <tag k="brewery" v="Affligem;Edelweiss;pelforth;Bière de Bourges"/>
+    <tag k="internet_access" v="wlan"/>
+    <tag k="name" v="Les pères populaires"/>
+  </node>
+  <node id="530272890" lat="48.8493959" lon="2.3750250">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Chez Habibi"/>
+    <tag k="opening_hours" v="Mo-Su 17:00-02:00"/>
+  </node>
+  <node id="530272911" lat="48.8464256" lon="2.3723704">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Flute Gana"/>
+  </node>
+  <node id="3701100011" lat="48.8795128" lon="2.3268768">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Tabac Le Liège"/>
+    <tag k="source" v="survey"/>
+    <tag k="tobacco" v="yes"/>
+  </node>
+  <node id="3701100018" lat="48.8797527" lon="2.3288634">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="L'Estaminet Liège"/>
+    <tag k="source" v="survey"/>
+  </node>
+  <node id="3708580900" lat="48.8835570" lon="2.3419972">
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Café du Théâtre"/>
+    <tag k="source" v="survey"/>
+  </node>
+  <node id="3709931717" lat="48.8277638" lon="2.3796985">
+    <tag k="addr:city" v="Paris"/>
+    <tag k="addr:country" v="FR"/>
+    <tag k="addr:postcode" v="75013"/>
+    <tag k="addr:street" v="Avenue de France"/>
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Lounge Bar"/>
+    <tag k="wheelchair" v="yes"/>
+  </node>
+  <node id="3713373616" lat="48.8753041" lon="2.3602466">
+    <tag k="addr:city" v="Paris"/>
+    <tag k="addr:housenumber" v="148"/>
+    <tag k="addr:postcode" v="75010"/>
+    <tag k="addr:street" v="Rue du Faubourg Saint-Martin"/>
+    <tag k="amenity" v="bar"/>
+    <tag k="name" v="Café A"/>
+    <tag k="phone" v="+33 9 81 29 83 38"/>
+    <tag k="smoking" v="outside"/>
+    <tag k="source" v="https://www.facebook.com/cafea10"/>
+    <tag k="terrace" v="yes"/>
+  </node>
+
+</osm>

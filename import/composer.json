@@ -15,12 +15,16 @@
         "monolog/monolog": "^1.17",
         "symfony/yaml": "^2.7",
         "guzzlehttp/guzzle": "^6.1",
-        "symfony/monolog-bridge": "^2.7"
+        "symfony/monolog-bridge": "^2.7",
+        "pagerfanta/pagerfanta": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "Bab\\": "src/Bab/",
             "OsrmClient\\": "src/OsrmClient/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
     }
 }
