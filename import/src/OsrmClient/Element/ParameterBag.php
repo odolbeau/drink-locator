@@ -46,4 +46,14 @@ class ParameterBag implements \ArrayAccess
     {
         return isset($this->parameters[$offset]) ? $this->parameters[$offset] : null;
     }
+
+    /**
+     * all
+     *
+     * @return array
+     */
+    public function all()
+    {
+        return $this->parameters;
+    }
 }

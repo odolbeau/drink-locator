@@ -6,18 +6,16 @@ use GuzzleHttp\Client as HttpClient;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use GuzzleHttp\Exception\ClientException;
-use OsrmClient\Iterator\Osm3xXmlIterator;
+use OsrmClient\Iterator\Osm3sXmlIterator;
 
 class Client
 {
     protected $httpClient;
-    protected $mapper;
     protected $logger;
 
-    public function __construct(HttpClient $httpClient = null, Mapper $mapper = null, LoggerInterface $logger = null)
+    public function __construct(HttpClient $httpClient = null, LoggerInterface $logger = null)
     {
         $this->httpClient = $httpClient ?: $this->getDefaultHttpClient();
-        $this->mapper = $mapper ?: new Mapper();
 
         if (!isset($this->httpClient->getConfig()['base_uri'])) {
             throw new \InvalidArgumentException('You must specify a base_uri for your Guzzle client');
@@ -44,7 +42,7 @@ class Client
             throw $e;
         }
 
-        return new Osm3xXmlIterator((string) $response->getBody());
+        return new Osm3sXmlIterator((string) $response->getBody());
     }
 
     /**

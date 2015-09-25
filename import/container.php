@@ -6,6 +6,10 @@ use OsrmClient\OverpassAPI\Client;
 use Monolog\Processor\PsrLogMessageProcessor;
 use Monolog\Logger;
 use Symfony\Bridge\Monolog\Handler\ConsoleHandler;
+use Symfony\Component\Yaml\Yaml;
+use Bab\Indexer;
+
+$config = Yaml::parse(__DIR__.'/config/parameters.yml');
 
 $c = new Container();
 
@@ -20,8 +24,7 @@ $c['osrm_client'] = function ($c) {
     return new OsrmClient\OverpassAPI\Client();
 };
 $c['logger'] = function ($c) {
-    $logger = new Logger('main'); # Main channel, or whatever name you like.
-    # PSR 3 log message formatting for all handlers
+    $logger = new Logger('main');
     $logger->pushProcessor(new PsrLogMessageProcessor());
     $logger->pushHandler($c['monolog.handler.console']);
 
@@ -29,6 +32,20 @@ $c['logger'] = function ($c) {
 };
 $c['monolog.handler.console'] = function ($c) {
     return new ConsoleHandler();
+};
+$c['indexer'] = function ($c) use ($config) {
+    return new Indexer(
+        new \Elastica\Type(
+            new \Elastica\Index(
+                new \Elastica\Client([
+                    'host' => $config['elasticsearch']['host'],
+                    'port' => $config['elasticsearch']['port']
+                ]),
+                $config['elasticsearch']['index']
+            ),
+            $config['elasticsearch']['type']
+        )
+    );
 };
 
 return $c;

@@ -4,15 +4,12 @@
 require_once __DIR__.'/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use Symfony\Component\Yaml\Yaml;
-
-$config = Yaml::parse(__DIR__.'/config/parameters.yml');
 
 $c = require_once __DIR__.'/container.php';
 
 $application = new Application('Drink locator import command', '1.0.0');
 
-$application->add(new \Bab\Command\ImportCommand($c['osrm_client'], $c['logger']));
+$application->add(new \Bab\Command\ImportCommand($c['osrm_client'], $c['indexer'], $c['logger']));
 
 $application->setDispatcher($c['dispatcher']);
 $application->run();

@@ -8,14 +8,16 @@ use Symfony\Component\Console\Output\OutputInterface;
 use OsrmClient\OverpassAPI\Client;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Bab\Indexer;
 
 class ImportCommand extends Command
 {
     protected $client;
 
-    public function __construct(Client $client, LoggerInterface $logger = null)
+    public function __construct(Client $client, Indexer $indexer, LoggerInterface $logger = null)
     {
         $this->client = $client;
+        $this->indexer = $indexer;
         $this->logger = $logger ?: new NullLogger();
 
         parent::__construct();
@@ -39,6 +41,8 @@ class ImportCommand extends Command
     {
         $this->logger->info('Start importing OSRM bars');
 
-        $this->client->search('node(48.815465,2.248614,48.907167,2.422335)["amenity"="bar"]; out body;');
+        $iterator = $this->client->search('node(48.815465,2.248614,48.907167,2.422335)["amenity"="bar"]; out body;');
+
+        $this->indexer->index($iterator);
     }
 }

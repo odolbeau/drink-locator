@@ -3,7 +3,6 @@
 namespace OsrmClient\Iterator;
 
 use Prophecy\Argument;
-use OsrmClient\Iterator\Osm3xXmlIterator;
 use OsrmClient\Element\Node;
 use OsrmClient\Element\AttributeBag;
 use OsrmClient\Element\TagBag;
