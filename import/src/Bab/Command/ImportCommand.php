@@ -41,7 +41,7 @@ class ImportCommand extends Command
     {
         $this->logger->info('Start importing OSRM bars');
 
-        $iterator = $this->client->search('node(48.815465,2.248614,48.907167,2.422335)["amenity"="bar"]; out body;');
+        $iterator = $this->client->search('node(48.815465,2.248614,48.907167,2.422335)["amenity"="bar"]; node(48.815465,2.248614,48.907167,2.422335)["amenity"="pub"]; out body;');
 
         $this->indexer->index($iterator);
     }
