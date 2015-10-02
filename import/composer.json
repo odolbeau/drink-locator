@@ -1,5 +1,5 @@
 {
-    "name": "bab/drink-import",
+    "name": "drink-locator/import",
     "description": "Import bars from OSRM",
     "license": "MIT",
     "authors": [
