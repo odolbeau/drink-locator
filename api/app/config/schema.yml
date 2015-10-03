@@ -12,7 +12,8 @@ types:
 
     AggregateRating:
         properties:
-            itemReviewed: ~
+            itemReviewed:
+                range: BarOrPub
             ratingCount: ~
             reviewCount: ~
 
@@ -83,9 +84,9 @@ types:
 
     Review:
         properties:
-            itemReviewed: ~
+            itemReviewed:
+                range: BarOrPub
             reviewBody: ~
-            reviewRating: ~
 
     # Parent of ContactPoint & GeoCoordinates
     StructuredValue: ~

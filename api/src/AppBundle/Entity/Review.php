@@ -18,7 +18,7 @@ class Review extends CreativeWork
      */
     private $id;
     /**
-     * @var Thing The item that is being reviewed/rated.
+     * @var BarOrPub The item that is being reviewed/rated.
      * 
      * @Iri("https://schema.org/itemReviewed")
      */
@@ -30,12 +30,6 @@ class Review extends CreativeWork
      * @Iri("https://schema.org/reviewBody")
      */
     private $reviewBody;
-    /**
-     * @var Rating The rating given in this review. Note that reviews can themselves be rated. The `reviewRating` applies to rating given by the review. The `aggregateRating` property applies to the review itself, as a creative work.
-     * 
-     * @Iri("https://schema.org/reviewRating")
-     */
-    private $reviewRating;
 
     /**
      * Sets id.
@@ -64,11 +58,11 @@ class Review extends CreativeWork
     /**
      * Sets itemReviewed.
      * 
-     * @param Thing $itemReviewed
+     * @param BarOrPub $itemReviewed
      * 
      * @return $this
      */
-    public function setItemReviewed(Thing $itemReviewed = null)
+    public function setItemReviewed(BarOrPub $itemReviewed = null)
     {
         $this->itemReviewed = $itemReviewed;
 
@@ -78,7 +72,7 @@ class Review extends CreativeWork
     /**
      * Gets itemReviewed.
      * 
-     * @return Thing
+     * @return BarOrPub
      */
     public function getItemReviewed()
     {
@@ -107,29 +101,5 @@ class Review extends CreativeWork
     public function getReviewBody()
     {
         return $this->reviewBody;
-    }
-
-    /**
-     * Sets reviewRating.
-     * 
-     * @param Rating $reviewRating
-     * 
-     * @return $this
-     */
-    public function setReviewRating(Rating $reviewRating = null)
-    {
-        $this->reviewRating = $reviewRating;
-
-        return $this;
-    }
-
-    /**
-     * Gets reviewRating.
-     * 
-     * @return Rating
-     */
-    public function getReviewRating()
-    {
-        return $this->reviewRating;
     }
 }

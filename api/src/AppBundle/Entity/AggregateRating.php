@@ -18,7 +18,7 @@ class AggregateRating extends Rating
      */
     private $id;
     /**
-     * @var Thing The item that is being reviewed/rated.
+     * @var BarOrPub The item that is being reviewed/rated.
      * 
      * @Iri("https://schema.org/itemReviewed")
      */
@@ -65,11 +65,11 @@ class AggregateRating extends Rating
     /**
      * Sets itemReviewed.
      * 
-     * @param Thing $itemReviewed
+     * @param BarOrPub $itemReviewed
      * 
      * @return $this
      */
-    public function setItemReviewed(Thing $itemReviewed = null)
+    public function setItemReviewed(BarOrPub $itemReviewed = null)
     {
         $this->itemReviewed = $itemReviewed;
 
@@ -79,7 +79,7 @@ class AggregateRating extends Rating
     /**
      * Gets itemReviewed.
      * 
-     * @return Thing
+     * @return BarOrPub
      */
     public function getItemReviewed()
     {
