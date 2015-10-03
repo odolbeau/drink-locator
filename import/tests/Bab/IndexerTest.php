@@ -5,12 +5,16 @@ namespace Bab;
 use Prophecy\Argument;
 use Bab\Indexer;
 use OsrmClient\Iterator\Osm3sXmlIterator;
+use Bab\PropertyFormatter;
 
 class IndexerTest extends \PHPUnit_Framework_TestCase
 {
     public function test_it_is_initializable()
     {
-        $indexer = new Indexer($this->prophesize('Elastica\Type')->reveal());
+        $indexer = new Indexer(
+            $this->prophesize('Elastica\Type')->reveal(),
+            $this->prophesize('Bab\PropertyFormatter')->reveal()
+        );
 
         $this->assertInstanceOf('Bab\Indexer', $indexer);
     }
@@ -24,7 +28,7 @@ class IndexerTest extends \PHPUnit_Framework_TestCase
             ->addDocument(Argument::type('Elastica\Document'))
             ->shouldBeCalledTimes(17)
         ;
-        $indexer = new Indexer($type->reveal());
+        $indexer = new Indexer($type->reveal(), new PropertyFormatter());
 
         $indexer->index($iterator);
     }

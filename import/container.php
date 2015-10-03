@@ -8,6 +8,7 @@ use Monolog\Logger;
 use Symfony\Bridge\Monolog\Handler\ConsoleHandler;
 use Symfony\Component\Yaml\Yaml;
 use Bab\Indexer;
+use Bab\PropertyFormatter;
 
 $config = Yaml::parse(__DIR__.'/config/parameters.yml');
 
@@ -44,7 +45,8 @@ $c['indexer'] = function ($c) use ($config) {
                 $config['elasticsearch']['index']
             ),
             $config['elasticsearch']['type']
-        )
+        ),
+        new PropertyFormatter()
     );
 };
 
