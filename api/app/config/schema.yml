@@ -1,0 +1,100 @@
+namespaces:
+    entity: "AppBundle\Entity"
+
+annotationGenerators:
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DunglasApiAnnotationGenerator
+
+types:
+    # Parent of Country
+    AdministrativeArea: ~
+
+    AggregateRating:
+        properties:
+            itemReviewed: ~
+            ratingCount: ~
+            reviewCount: ~
+
+    BarOrPub: ~
+
+    ContactPoint:
+        properties:
+            email: ~
+
+    Country: ~
+
+    # Parent of MediaObject & Review
+    CreativeWork: ~
+
+    #Date: ~
+
+    FoodEstablishment: ~
+
+    GeoCoordinates:
+        properties:
+            latitude:
+                range: Number
+            longitude:
+                range: Number
+
+    ImageObject: ~
+
+    # Parent of Rating
+    Intangible: ~
+
+    LocalBusiness:
+        parent: Place
+        properties:
+            priceRange: ~
+            openingHours: ~
+
+    MediaObject:
+        properties:
+            contentUrl: ~
+            uploadDate: ~
+
+    Place:
+        properties:
+            address: ~
+            aggregateRating: ~
+            geo:
+                range: GeoCoordinates
+            #openingHoursSpecification: ~
+            photo:
+                range: ImageObject
+            review: ~
+            telephone: ~
+
+    PostalAddress:
+        properties:
+            addressCountry: ~
+            addressLocality: ~
+            postalCode: ~
+            streetAddress: ~
+
+    Rating:
+        properties:
+            bestRating:
+                range: Number
+            ratingValue: ~
+            worstRatng:
+                range: Number
+
+    Review:
+        properties:
+            itemReviewed: ~
+            reviewBody: ~
+            reviewRating: ~
+
+    # Parent of ContactPoint & GeoCoordinates
+    StructuredValue: ~
+
+    # Parent of all
+    Thing:
+        properties:
+            description: ~
+            name: ~
+            url: ~
+
+    #URL: ~

@@ -1,0 +1,9 @@
+services:
+    elasticsearch_data_provider:
+        class: AppBundle\DataProvider\ElasticsearchDataProvider
+        tags:  [ { name: "api.data_provider", priority: 1 } ]
+
+    resource.bar_or_pub:
+        parent:    "api.resource"
+        arguments: [ "AppBundle\\Entity\\BarOrPub" ]
+        tags:      [ { name: "api.resource" } ]

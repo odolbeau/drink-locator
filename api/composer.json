@@ -1,0 +1,71 @@
+{
+    "name": "drink-locator/api",
+    "type": "project",
+    "description": "Drink locator API",
+    "autoload": {
+        "psr-4": { "": "src/", "SymfonyStandard\\": "app/" }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "symfony/symfony": "~2.7",
+        "twig/extensions": "~1.0",
+        "symfony/monolog-bundle": "~2.4",
+        "sensio/distribution-bundle": "~3.0,>=3.0.12",
+        "dunglas/api-bundle": "~1.0",
+        "nelmio/cors-bundle": "~1.4",
+        "nelmio/api-doc-bundle": "~2.9@dev",
+        "friendsofsymfony/http-cache-bundle": "~1.0",
+        "dunglas/php-property-info": "^0.2.1"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3",
+        "api-platform/schema-generator": "~1.0",
+        "phpdocumentor/reflection": "^1.0"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "SymfonyStandard\\Composer::hookRootPackageInstall"
+        ],
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "symfony-assets-install": "relative"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "dunglas/api-bundle",
+                "version": "v1.0.1",
+                "source": {
+                    "url":  "git@github.com:odolbeau/DunglasApiBundle.git",
+                    "type": "git",
+                    "reference": "disable-doctrine"
+                },
+                "autoload": {
+                    "psr-4": { "Dunglas\\ApiBundle\\": "" }
+                }
+            }
+        }
+    ]
+}
