@@ -1,16 +1,16 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DrinkLocator\Entity;
 
 use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
- * An image file.
+ * A country.
  * 
- * @see http://schema.org/ImageObject Documentation on Schema.org
- * @Iri("http://schema.org/ImageObject")
+ * @see http://schema.org/Country Documentation on Schema.org
+ * @Iri("http://schema.org/Country")
  */
-class ImageObject extends MediaObject
+class Country extends AdministrativeArea
 {
     /**
      * @var int

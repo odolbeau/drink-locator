@@ -3,7 +3,7 @@
     "type": "project",
     "description": "Drink locator API",
     "autoload": {
-        "psr-4": { "": "src/", "SymfonyStandard\\": "app/" }
+        "psr-4": { "DrinkLocator\\": "src/", "SymfonyStandard\\": "app/" }
     },
     "require": {
         "php": ">=5.5.0",
@@ -15,7 +15,8 @@
         "nelmio/cors-bundle": "~1.4",
         "nelmio/api-doc-bundle": "~2.9@dev",
         "friendsofsymfony/http-cache-bundle": "~1.0",
-        "dunglas/php-property-info": "^0.2.1"
+        "dunglas/php-property-info": "^0.2.1",
+        "ruflin/elastica": "^2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

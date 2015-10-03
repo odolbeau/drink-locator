@@ -1,9 +1,33 @@
 services:
     elasticsearch_data_provider:
-        class: AppBundle\DataProvider\ElasticsearchDataProvider
+        class: DrinkLocator\AppBundle\DataProvider\ElasticsearchDataProvider
+        arguments: [ "@search.engine" ]
         tags:  [ { name: "api.data_provider", priority: 1 } ]
 
     resource.bar_or_pub:
         parent:    "api.resource"
-        arguments: [ "AppBundle\\Entity\\BarOrPub" ]
+        arguments: [ "DrinkLocator\\Entity\\BarOrPub" ]
         tags:      [ { name: "api.resource" } ]
+
+    search.engine:
+        class: DrinkLocator\Search\Engine
+        arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub" ]
+
+    elasticsearch.bar_or_pub.type:
+        class: Elastica\Type
+        public: false
+        arguments: [ "@elasticsearch.bar_or_pub.index", "bar" ]
+
+    elasticsearch.bar_or_pub.index:
+        class: Elastica\Index
+        public: false
+        arguments: [ "@elasticsearch.client", "bars" ]
+
+    elasticsearch.client:
+        class: Elastica\Client
+        public: false
+        arguments: [{ "host": "%elasticsearch_host%", "port": "%elasticsearch_port%" }]
+
+    data_transformer.bar_or_pub:
+        class: DrinkLocator\Search\DataTransformer\BarOrPub
+        public: false

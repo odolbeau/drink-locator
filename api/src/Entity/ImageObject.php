@@ -1,16 +1,16 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DrinkLocator\Entity;
 
 use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
- * A bar or pub.
+ * An image file.
  * 
- * @see http://schema.org/BarOrPub Documentation on Schema.org
- * @Iri("http://schema.org/BarOrPub")
+ * @see http://schema.org/ImageObject Documentation on Schema.org
+ * @Iri("http://schema.org/ImageObject")
  */
-class BarOrPub extends FoodEstablishment
+class ImageObject extends MediaObject
 {
     /**
      * @var int

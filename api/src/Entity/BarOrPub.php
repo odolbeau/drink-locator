@@ -1,16 +1,16 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DrinkLocator\Entity;
 
 use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
- * A country.
+ * A bar or pub.
  * 
- * @see http://schema.org/Country Documentation on Schema.org
- * @Iri("http://schema.org/Country")
+ * @see http://schema.org/BarOrPub Documentation on Schema.org
+ * @Iri("http://schema.org/BarOrPub")
  */
-class Country extends AdministrativeArea
+class BarOrPub extends FoodEstablishment
 {
     /**
      * @var int

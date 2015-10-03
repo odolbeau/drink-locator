@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DrinkLocator\Entity;
 
 use Dunglas\ApiBundle\Annotation\Iri;
 
