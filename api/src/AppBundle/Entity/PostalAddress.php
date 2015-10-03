@@ -18,12 +18,6 @@ class PostalAddress extends ContactPoint
      */
     private $id;
     /**
-     * @var Country The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     * 
-     * @Iri("https://schema.org/addressCountry")
-     */
-    private $addressCountry;
-    /**
      * @var string The locality. For example, Mountain View.
      * 
      * @Assert\Type(type="string")
@@ -67,30 +61,6 @@ class PostalAddress extends ContactPoint
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Sets addressCountry.
-     * 
-     * @param Country $addressCountry
-     * 
-     * @return $this
-     */
-    public function setAddressCountry(Country $addressCountry = null)
-    {
-        $this->addressCountry = $addressCountry;
-
-        return $this;
-    }
-
-    /**
-     * Gets addressCountry.
-     * 
-     * @return Country
-     */
-    public function getAddressCountry()
-    {
-        return $this->addressCountry;
     }
 
     /**

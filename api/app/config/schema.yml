@@ -68,7 +68,7 @@ types:
 
     PostalAddress:
         properties:
-            addressCountry: ~
+            #addressCountry: ~
             addressLocality: ~
             postalCode: ~
             streetAddress: ~
@@ -96,5 +96,3 @@ types:
             description: ~
             name: ~
             url: ~
-
-    #URL: ~
