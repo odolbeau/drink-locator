@@ -11,7 +11,7 @@
         "twig/extensions": "~1.0",
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0,>=3.0.12",
-        "dunglas/api-bundle": "~1.0",
+        "dunglas/api-bundle": "~1.0@dev",
         "nelmio/cors-bundle": "~1.4",
         "nelmio/api-doc-bundle": "~2.9@dev",
         "friendsofsymfony/http-cache-bundle": "~1.0",
@@ -51,22 +51,5 @@
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "symfony-assets-install": "relative"
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "dunglas/api-bundle",
-                "version": "v1.0.1",
-                "source": {
-                    "url":  "git@github.com:odolbeau/DunglasApiBundle.git",
-                    "type": "git",
-                    "reference": "disable-doctrine"
-                },
-                "autoload": {
-                    "psr-4": { "Dunglas\\ApiBundle\\": "" }
-                }
-            }
-        }
-    ]
+    }
 }
