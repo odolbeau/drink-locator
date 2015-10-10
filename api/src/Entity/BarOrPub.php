@@ -6,7 +6,7 @@ use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
  * A bar or pub.
- * 
+ *
  * @see http://schema.org/BarOrPub Documentation on Schema.org
  * @Iri("http://schema.org/BarOrPub")
  */
@@ -19,9 +19,9 @@ class BarOrPub extends FoodEstablishment
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -33,7 +33,7 @@ class BarOrPub extends FoodEstablishment
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()

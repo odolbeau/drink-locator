@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * A review of an item - for example, of a restaurant, movie, or store.
- * 
+ *
  * @see http://schema.org/Review Documentation on Schema.org
  * @Iri("http://schema.org/Review")
  */
@@ -19,13 +19,13 @@ class Review extends CreativeWork
     private $id;
     /**
      * @var BarOrPub The item that is being reviewed/rated.
-     * 
+     *
      * @Iri("https://schema.org/itemReviewed")
      */
     private $itemReviewed;
     /**
      * @var string The actual body of the review.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/reviewBody")
      */
@@ -33,9 +33,9 @@ class Review extends CreativeWork
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -47,7 +47,7 @@ class Review extends CreativeWork
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -57,9 +57,9 @@ class Review extends CreativeWork
 
     /**
      * Sets itemReviewed.
-     * 
+     *
      * @param BarOrPub $itemReviewed
-     * 
+     *
      * @return $this
      */
     public function setItemReviewed(BarOrPub $itemReviewed = null)
@@ -71,7 +71,7 @@ class Review extends CreativeWork
 
     /**
      * Gets itemReviewed.
-     * 
+     *
      * @return BarOrPub
      */
     public function getItemReviewed()
@@ -81,9 +81,9 @@ class Review extends CreativeWork
 
     /**
      * Sets reviewBody.
-     * 
+     *
      * @param string $reviewBody
-     * 
+     *
      * @return $this
      */
     public function setReviewBody($reviewBody)
@@ -95,7 +95,7 @@ class Review extends CreativeWork
 
     /**
      * Gets reviewBody.
-     * 
+     *
      * @return string
      */
     public function getReviewBody()

@@ -6,7 +6,7 @@ use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
  * A country.
- * 
+ *
  * @see http://schema.org/Country Documentation on Schema.org
  * @Iri("http://schema.org/Country")
  */
@@ -19,9 +19,9 @@ class Country extends AdministrativeArea
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -33,7 +33,7 @@ class Country extends AdministrativeArea
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()

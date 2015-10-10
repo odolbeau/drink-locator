@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * The average rating based on multiple ratings or reviews.
- * 
+ *
  * @see http://schema.org/AggregateRating Documentation on Schema.org
  * @Iri("http://schema.org/AggregateRating")
  */
@@ -19,20 +19,20 @@ class AggregateRating extends Rating
     private $id;
     /**
      * @var BarOrPub The item that is being reviewed/rated.
-     * 
+     *
      * @Iri("https://schema.org/itemReviewed")
      */
     private $itemReviewed;
     /**
      * @var int The count of total number of ratings.
-     * 
+     *
      * @Assert\Type(type="integer")
      * @Iri("https://schema.org/ratingCount")
      */
     private $ratingCount;
     /**
      * @var int The count of total number of reviews.
-     * 
+     *
      * @Assert\Type(type="integer")
      * @Iri("https://schema.org/reviewCount")
      */
@@ -40,9 +40,9 @@ class AggregateRating extends Rating
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -54,7 +54,7 @@ class AggregateRating extends Rating
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -64,9 +64,9 @@ class AggregateRating extends Rating
 
     /**
      * Sets itemReviewed.
-     * 
+     *
      * @param BarOrPub $itemReviewed
-     * 
+     *
      * @return $this
      */
     public function setItemReviewed(BarOrPub $itemReviewed = null)
@@ -78,7 +78,7 @@ class AggregateRating extends Rating
 
     /**
      * Gets itemReviewed.
-     * 
+     *
      * @return BarOrPub
      */
     public function getItemReviewed()
@@ -88,9 +88,9 @@ class AggregateRating extends Rating
 
     /**
      * Sets ratingCount.
-     * 
+     *
      * @param int $ratingCount
-     * 
+     *
      * @return $this
      */
     public function setRatingCount($ratingCount)
@@ -102,7 +102,7 @@ class AggregateRating extends Rating
 
     /**
      * Gets ratingCount.
-     * 
+     *
      * @return int
      */
     public function getRatingCount()
@@ -112,9 +112,9 @@ class AggregateRating extends Rating
 
     /**
      * Sets reviewCount.
-     * 
+     *
      * @param int $reviewCount
-     * 
+     *
      * @return $this
      */
     public function setReviewCount($reviewCount)
@@ -126,7 +126,7 @@ class AggregateRating extends Rating
 
     /**
      * Gets reviewCount.
-     * 
+     *
      * @return int
      */
     public function getReviewCount()

@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * A contact point—for example, a Customer Complaints department.
- * 
+ *
  * @see http://schema.org/ContactPoint Documentation on Schema.org
  * @Iri("http://schema.org/ContactPoint")
  */
@@ -15,7 +15,7 @@ abstract class ContactPoint extends StructuredValue
 {
     /**
      * @var string Email address.
-     * 
+     *
      * @Assert\Email
      * @Iri("https://schema.org/email")
      */
@@ -23,9 +23,9 @@ abstract class ContactPoint extends StructuredValue
 
     /**
      * Sets email.
-     * 
+     *
      * @param string $email
-     * 
+     *
      * @return $this
      */
     public function setEmail($email)
@@ -37,7 +37,7 @@ abstract class ContactPoint extends StructuredValue
 
     /**
      * Gets email.
-     * 
+     *
      * @return string
      */
     public function getEmail()

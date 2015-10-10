@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Entities that have a somewhat fixed, physical extension.
- * 
+ *
  * @see http://schema.org/Place Documentation on Schema.org
  * @Iri("http://schema.org/Place")
  */
@@ -15,37 +15,37 @@ abstract class Place extends Thing
 {
     /**
      * @var PostalAddress Physical address of the item.
-     * 
+     *
      * @Iri("https://schema.org/address")
      */
     private $address;
     /**
      * @var AggregateRating The overall rating, based on a collection of reviews or ratings, of the item.
-     * 
+     *
      * @Iri("https://schema.org/aggregateRating")
      */
     private $aggregateRating;
     /**
      * @var GeoCoordinates The geo coordinates of the place.
-     * 
+     *
      * @Iri("https://schema.org/geo")
      */
     private $geo;
     /**
      * @var ImageObject A photograph of this place.
-     * 
+     *
      * @Iri("https://schema.org/photo")
      */
     private $photo;
     /**
      * @var Review A review of the item.
-     * 
+     *
      * @Iri("https://schema.org/review")
      */
     private $review;
     /**
      * @var string The telephone number.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/telephone")
      */
@@ -53,9 +53,9 @@ abstract class Place extends Thing
 
     /**
      * Sets address.
-     * 
+     *
      * @param PostalAddress $address
-     * 
+     *
      * @return $this
      */
     public function setAddress(PostalAddress $address = null)
@@ -67,7 +67,7 @@ abstract class Place extends Thing
 
     /**
      * Gets address.
-     * 
+     *
      * @return PostalAddress
      */
     public function getAddress()
@@ -77,9 +77,9 @@ abstract class Place extends Thing
 
     /**
      * Sets aggregateRating.
-     * 
+     *
      * @param AggregateRating $aggregateRating
-     * 
+     *
      * @return $this
      */
     public function setAggregateRating(AggregateRating $aggregateRating = null)
@@ -91,7 +91,7 @@ abstract class Place extends Thing
 
     /**
      * Gets aggregateRating.
-     * 
+     *
      * @return AggregateRating
      */
     public function getAggregateRating()
@@ -101,9 +101,9 @@ abstract class Place extends Thing
 
     /**
      * Sets geo.
-     * 
+     *
      * @param GeoCoordinates $geo
-     * 
+     *
      * @return $this
      */
     public function setGeo(GeoCoordinates $geo = null)
@@ -115,7 +115,7 @@ abstract class Place extends Thing
 
     /**
      * Gets geo.
-     * 
+     *
      * @return GeoCoordinates
      */
     public function getGeo()
@@ -125,9 +125,9 @@ abstract class Place extends Thing
 
     /**
      * Sets photo.
-     * 
+     *
      * @param ImageObject $photo
-     * 
+     *
      * @return $this
      */
     public function setPhoto(ImageObject $photo = null)
@@ -139,7 +139,7 @@ abstract class Place extends Thing
 
     /**
      * Gets photo.
-     * 
+     *
      * @return ImageObject
      */
     public function getPhoto()
@@ -149,9 +149,9 @@ abstract class Place extends Thing
 
     /**
      * Sets review.
-     * 
+     *
      * @param Review $review
-     * 
+     *
      * @return $this
      */
     public function setReview(Review $review = null)
@@ -163,7 +163,7 @@ abstract class Place extends Thing
 
     /**
      * Gets review.
-     * 
+     *
      * @return Review
      */
     public function getReview()
@@ -173,9 +173,9 @@ abstract class Place extends Thing
 
     /**
      * Sets telephone.
-     * 
+     *
      * @param string $telephone
-     * 
+     *
      * @return $this
      */
     public function setTelephone($telephone)
@@ -187,7 +187,7 @@ abstract class Place extends Thing
 
     /**
      * Gets telephone.
-     * 
+     *
      * @return string
      */
     public function getTelephone()

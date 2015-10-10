@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * The most generic type of item.
- * 
+ *
  * @see http://schema.org/Thing Documentation on Schema.org
  * @Iri("http://schema.org/Thing")
  */
@@ -15,21 +15,21 @@ abstract class Thing
 {
     /**
      * @var string A short description of the item.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/description")
      */
     private $description;
     /**
      * @var string The name of the item.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/name")
      */
     private $name;
     /**
      * @var string URL of the item.
-     * 
+     *
      * @Assert\Url
      * @Iri("https://schema.org/url")
      */
@@ -37,9 +37,9 @@ abstract class Thing
 
     /**
      * Sets description.
-     * 
+     *
      * @param string $description
-     * 
+     *
      * @return $this
      */
     public function setDescription($description)
@@ -51,7 +51,7 @@ abstract class Thing
 
     /**
      * Gets description.
-     * 
+     *
      * @return string
      */
     public function getDescription()
@@ -61,9 +61,9 @@ abstract class Thing
 
     /**
      * Sets name.
-     * 
+     *
      * @param string $name
-     * 
+     *
      * @return $this
      */
     public function setName($name)
@@ -75,7 +75,7 @@ abstract class Thing
 
     /**
      * Gets name.
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -85,9 +85,9 @@ abstract class Thing
 
     /**
      * Sets url.
-     * 
+     *
      * @param string $url
-     * 
+     *
      * @return $this
      */
     public function setUrl($url)
@@ -99,7 +99,7 @@ abstract class Thing
 
     /**
      * Gets url.
-     * 
+     *
      * @return string
      */
     public function getUrl()

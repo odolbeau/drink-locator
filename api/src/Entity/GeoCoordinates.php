@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * The geographic coordinates of a place or event.
- * 
+ *
  * @see http://schema.org/GeoCoordinates Documentation on Schema.org
  * @Iri("http://schema.org/GeoCoordinates")
  */
@@ -19,14 +19,14 @@ class GeoCoordinates extends StructuredValue
     private $id;
     /**
      * @var float The latitude of a location. For example `37.42242`.
-     * 
+     *
      * @Assert\Type(type="float")
      * @Iri("https://schema.org/latitude")
      */
     private $latitude;
     /**
      * @var float The longitude of a location. For example `-122.08585`.
-     * 
+     *
      * @Assert\Type(type="float")
      * @Iri("https://schema.org/longitude")
      */
@@ -34,9 +34,9 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -48,7 +48,7 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -58,9 +58,9 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Sets latitude.
-     * 
+     *
      * @param float $latitude
-     * 
+     *
      * @return $this
      */
     public function setLatitude($latitude)
@@ -72,7 +72,7 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Gets latitude.
-     * 
+     *
      * @return float
      */
     public function getLatitude()
@@ -82,9 +82,9 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Sets longitude.
-     * 
+     *
      * @param float $longitude
-     * 
+     *
      * @return $this
      */
     public function setLongitude($longitude)
@@ -96,7 +96,7 @@ class GeoCoordinates extends StructuredValue
 
     /**
      * Gets longitude.
-     * 
+     *
      * @return float
      */
     public function getLongitude()

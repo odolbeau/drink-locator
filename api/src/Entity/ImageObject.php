@@ -6,7 +6,7 @@ use Dunglas\ApiBundle\Annotation\Iri;
 
 /**
  * An image file.
- * 
+ *
  * @see http://schema.org/ImageObject Documentation on Schema.org
  * @Iri("http://schema.org/ImageObject")
  */
@@ -19,9 +19,9 @@ class ImageObject extends MediaObject
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -33,7 +33,7 @@ class ImageObject extends MediaObject
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()

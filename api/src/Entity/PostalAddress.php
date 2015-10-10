@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * The mailing address.
- * 
+ *
  * @see http://schema.org/PostalAddress Documentation on Schema.org
  * @Iri("http://schema.org/PostalAddress")
  */
@@ -19,21 +19,21 @@ class PostalAddress extends ContactPoint
     private $id;
     /**
      * @var string The locality. For example, Mountain View.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/addressLocality")
      */
     private $addressLocality;
     /**
      * @var string The postal code. For example, 94043.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/postalCode")
      */
     private $postalCode;
     /**
      * @var string The street address. For example, 1600 Amphitheatre Pkwy.
-     * 
+     *
      * @Assert\Type(type="string")
      * @Iri("https://schema.org/streetAddress")
      */
@@ -41,9 +41,9 @@ class PostalAddress extends ContactPoint
 
     /**
      * Sets id.
-     * 
+     *
      * @param int $id
-     * 
+     *
      * @return $this
      */
     public function setId($id)
@@ -55,7 +55,7 @@ class PostalAddress extends ContactPoint
 
     /**
      * Gets id.
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -65,9 +65,9 @@ class PostalAddress extends ContactPoint
 
     /**
      * Sets addressLocality.
-     * 
+     *
      * @param string $addressLocality
-     * 
+     *
      * @return $this
      */
     public function setAddressLocality($addressLocality)
@@ -79,7 +79,7 @@ class PostalAddress extends ContactPoint
 
     /**
      * Gets addressLocality.
-     * 
+     *
      * @return string
      */
     public function getAddressLocality()
@@ -89,9 +89,9 @@ class PostalAddress extends ContactPoint
 
     /**
      * Sets postalCode.
-     * 
+     *
      * @param string $postalCode
-     * 
+     *
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -103,7 +103,7 @@ class PostalAddress extends ContactPoint
 
     /**
      * Gets postalCode.
-     * 
+     *
      * @return string
      */
     public function getPostalCode()
@@ -113,9 +113,9 @@ class PostalAddress extends ContactPoint
 
     /**
      * Sets streetAddress.
-     * 
+     *
      * @param string $streetAddress
-     * 
+     *
      * @return $this
      */
     public function setStreetAddress($streetAddress)
@@ -127,7 +127,7 @@ class PostalAddress extends ContactPoint
 
     /**
      * Gets streetAddress.
-     * 
+     *
      * @return string
      */
     public function getStreetAddress()
