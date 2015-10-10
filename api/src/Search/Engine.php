@@ -4,16 +4,21 @@ namespace DrinkLocator\Search;
 
 use Elastica\Type;
 use DrinkLocator\Search\DataTransformer\BarOrPub;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+use Elastica\Exception\NotFoundException as ElasticaNotFoundException;
+use DrinkLocator\Exception\NotFoundException;
 
 class Engine
 {
     private $type;
     private $dataTransformer;
 
-    public function __construct(Type $type, BarOrPub $dataTransformer)
+    public function __construct(Type $type, BarOrPub $dataTransformer, LoggerInterface $logger = null)
     {
         $this->type = $type;
         $this->dataTransformer = $dataTransformer;
+        $this->logger = $logger ?: new NullLogger();
     }
 
     /**
@@ -25,7 +30,13 @@ class Engine
      */
     public function findOne($id)
     {
-        $document = $this->type->getDocument($id);
+        try {
+            $document = $this->type->getDocument($id);
+        } catch (ElasticaNotFoundException $e) {
+            $this->logger->debug('Document #{id} not found.', ['exception' => $e, 'id' => $id]);
+
+            throw new NotFoundException($e);
+        }
 
         return $this->dataTransformer->transform($document);
     }

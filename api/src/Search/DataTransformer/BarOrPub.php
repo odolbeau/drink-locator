@@ -49,6 +49,7 @@ class BarOrPub
         }
 
         $coordinates = new GeoCoordinates();
+        $coordinates->setId($data['id']);
         $coordinates->setLatitude($data['lat']);
         $coordinates->setLongitude($data['lon']);
 
@@ -70,6 +71,7 @@ class BarOrPub
         }
 
         $postalAddress = new PostalAddress();
+        $postalAddress->setId($data['id']);
         $addr = $data['addr'];
         if (isset($addr['housenumber']) || isset($addr['street'])) {
             $parts = [];

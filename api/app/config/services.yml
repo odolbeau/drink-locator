@@ -4,11 +4,6 @@ services:
         arguments: [ "@search.engine" ]
         tags:  [ { name: "api.data_provider", priority: 1 } ]
 
-    resource.bar_or_pub:
-        parent:    "api.resource"
-        arguments: [ "DrinkLocator\\Entity\\BarOrPub" ]
-        tags:      [ { name: "api.resource" } ]
-
     search.engine:
         class: DrinkLocator\Search\Engine
         arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub" ]
@@ -31,3 +26,14 @@ services:
     data_transformer.bar_or_pub:
         class: DrinkLocator\Search\DataTransformer\BarOrPub
         public: false
+
+    # Resources
+    resource.bar_or_pub:
+        parent:    "api.resource"
+        arguments: [ "DrinkLocator\\Entity\\BarOrPub" ]
+        tags:      [ { name: "api.resource" } ]
+
+    resource.geo_coordinates:
+        parent:    "api.resource"
+        arguments: [ "DrinkLocator\\Entity\\GeoCoordinates" ]
+        tags:      [ { name: "api.resource" } ]

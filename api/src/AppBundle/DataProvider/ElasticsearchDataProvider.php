@@ -7,6 +7,7 @@ use Dunglas\ApiBundle\Model\DataProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use DrinkLocator\Entity\BarOrPub;
 use DrinkLocator\Search\Engine;
+use DrinkLocator\Exception\NotFoundException;
 
 /**
  * Data provider for Elasticsearch.
@@ -25,7 +26,22 @@ class ElasticsearchDataProvider implements DataProviderInterface
      */
     public function getItem(ResourceInterface $resource, $id, $fetchData = false)
     {
-        return $this->searchEngine->findOne($id);
+        try {
+            $barOrPub = $this->searchEngine->findOne($id);
+        } catch (NotFoundException $e) {
+            return;
+        }
+
+        switch ($resource->getShortName()) {
+            case 'BarOrPub':
+                return $barOrPub;
+
+            case 'GeoCoordinates':
+                return $barOrPub->getGeo();
+
+            default:
+                throw new \InvalidArgumentException('Doesn\'t support '.$resource->getShortName().'.');
+        }
     }
 
     /**
@@ -41,6 +57,9 @@ class ElasticsearchDataProvider implements DataProviderInterface
      */
     public function supports(ResourceInterface $resource)
     {
-        return 'DrinkLocator\Entity\BarOrPub' === $resource->getEntityClass();
+        return in_array($resource->getEntityClass(), [
+            'DrinkLocator\Entity\BarOrPub',
+            'DrinkLocator\Entity\GeoCoordinates',
+        ]);
     }
 }
