@@ -6,7 +6,7 @@ services:
 
     search.engine:
         class: DrinkLocator\Search\Engine
-        arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub" ]
+        arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub", "@monolog.logger.search" ]
 
     elasticsearch.bar_or_pub.type:
         class: Elastica\Type
@@ -26,6 +26,15 @@ services:
     data_transformer.bar_or_pub:
         class: DrinkLocator\Search\DataTransformer\BarOrPub
         public: false
+
+    # Monolog
+    monolog.psr_log.processor:
+        class: Monolog\Processor\PsrLogMessageProcessor
+        tags: [ { name: "monolog.processor" } ]
+
+    monolog.web.processor:
+        class: Symfony\Bridge\Monolog\Processor\WebProcessor
+        tags: [ { name: "monolog.processor" }, { name: "kernel.event_listener", event: "kernel.request" } ]
 
     # Resources
     resource.bar_or_pub:

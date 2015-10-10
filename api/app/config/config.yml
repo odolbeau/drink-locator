@@ -32,6 +32,10 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+monolog:
+    channels:
+        - search
+
 # DunglasJsonLdApi configuration
 dunglas_api:
     title:       "%api_name%"
