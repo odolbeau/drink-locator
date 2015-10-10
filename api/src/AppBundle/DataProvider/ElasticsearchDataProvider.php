@@ -39,6 +39,9 @@ class ElasticsearchDataProvider implements DataProviderInterface
             case 'GeoCoordinates':
                 return $barOrPub->getGeo();
 
+            case 'PostalAddress':
+                return $barOrPub->getAddress();
+
             default:
                 throw new \InvalidArgumentException('Doesn\'t support '.$resource->getShortName().'.');
         }
@@ -60,6 +63,7 @@ class ElasticsearchDataProvider implements DataProviderInterface
         return in_array($resource->getEntityClass(), [
             'DrinkLocator\Entity\BarOrPub',
             'DrinkLocator\Entity\GeoCoordinates',
+            'DrinkLocator\Entity\PostalAddress',
         ]);
     }
 }

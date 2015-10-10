@@ -46,3 +46,8 @@ services:
         parent:    "api.resource"
         arguments: [ "DrinkLocator\\Entity\\GeoCoordinates" ]
         tags:      [ { name: "api.resource" } ]
+
+    resource.postal_address:
+        parent:    "api.resource"
+        arguments: [ "DrinkLocator\\Entity\\PostalAddress" ]
+        tags:      [ { name: "api.resource" } ]
