@@ -43,7 +43,8 @@ class BarOrPub
      */
     public function reverseTransform(BarOrPubEntity $barOrPub)
     {
-        $data['id'] = $barOrPub->getId();
+        $id = $barOrPub->getId() ?: uniqid('dl_');
+        $data['id'] = $id;
         $data['name'] = $barOrPub->getName();
 
         if (null !== $geo = $barOrPub->getGeo()) {
@@ -71,7 +72,7 @@ class BarOrPub
             $data['phone'] = $phone;
         }
 
-        return new Document($barOrPub->getId(), $data);
+        return new Document($id, $data);
     }
 
     /**

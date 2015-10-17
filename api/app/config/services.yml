@@ -8,6 +8,11 @@ services:
         class: DrinkLocator\Elasticsearch\Engine
         arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub", "@monolog.logger.search" ]
 
+    elasticsearch.event_subscriber:
+        class: DrinkLocator\Elasticsearch\EventSubscriber
+        arguments: [ "@event_dispatcher", "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub", "@monolog.logger.search" ]
+        tags: [ { name: "kernel.event_subscriber" } ]
+
     elasticsearch.bar_or_pub.type:
         class: Elastica\Type
         public: false
