@@ -20,7 +20,7 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
 
     public function test_transform()
     {
-        $document = Document::create([
+        $document = new Document(702916141, [
             'id' => 702916141,
             'lat' => '48.8567788',
             'lon' => '2.3558116',
@@ -28,10 +28,10 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
                 'housenumber' => '4',
                 'street' => 'Rue du Bourg Tibourg',
             ],
-            'amenity' => 'bar',
+            //'amenity' => 'bar',
             'name' => 'Feria Café',
             'phone' => '01 42 72 43 99',
-            'source' => 'cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010',
+            //'source' => 'cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010',
         ]);
 
         $coordinates = new GeoCoordinates();
@@ -52,5 +52,6 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
 
         $mapper = new BarOrPub();
         $this->assertEquals($expectedBarOrPub, $mapper->transform($document));
+        $this->assertEquals($document, $mapper->reverseTransform($expectedBarOrPub));
     }
 }

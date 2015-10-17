@@ -13,8 +13,8 @@ class BarOrPub
      * transform
      *
      * @param Document $document
-     * @access public
-     * @return void
+     *
+     * @return BarOrPubEntity
      */
     public function transform(Document $document)
     {
@@ -24,14 +24,54 @@ class BarOrPub
         $entity->setId($data['id']);
         $entity->setName($data['name']);
 
-        $this->handleGeoCoordinates($entity, $data);
-        $this->handlePostalAddress($entity, $data);
+        $this->transformGeoCoordinates($entity, $data);
+        $this->transformPostalAddress($entity, $data);
 
         if (isset($data['phone'])) {
             $entity->setTelephone($data['phone']);
         }
 
         return $entity;
+    }
+
+    /**
+     * reverseTransform
+     *
+     * @param BarOrPubEntity $barOrPub
+     *
+     * @return Document
+     */
+    public function reverseTransform(BarOrPubEntity $barOrPub)
+    {
+        $data['id'] = $barOrPub->getId();
+        $data['name'] = $barOrPub->getName();
+
+        if (null !== $geo = $barOrPub->getGeo()) {
+            $data['lat'] = $geo->getLatitude();
+            $data['lon'] = $geo->getLongitude();
+        }
+
+        if (null !== $address = $barOrPub->getAddress()) {
+            $addressData = [];
+            if (null !== $streeAddress = $address->getStreetAddress()) {
+                $parts = explode(' ', $streeAddress);
+                $addressData['housenumber'] = array_shift($parts);
+                $addressData['street'] = implode(' ', $parts);
+            }
+            if (null !== $city = $address->getAddressLocality()) {
+                $addressData['city'] = $city;
+            }
+            if (null !== $postCode = $address->getPostalCode()) {
+                $addressData['postcode'] = $postCode;
+            }
+            $data['addr'] = $addressData;
+        }
+
+        if (null !== $phone = $barOrPub->getTelephone()) {
+            $data['phone'] = $phone;
+        }
+
+        return new Document($barOrPub->getId(), $data);
     }
 
     /**
@@ -42,7 +82,7 @@ class BarOrPub
      *
      * @return void
      */
-    private function handleGeoCoordinates(BarOrPubEntity $entity, array $data)
+    private function transformGeoCoordinates(BarOrPubEntity $entity, array $data)
     {
         if (!isset($data['lat']) || !isset($data['lon'])) {
             return;
@@ -64,7 +104,7 @@ class BarOrPub
      *
      * @return void
      */
-    private function handlePostalAddress(BarOrPubEntity $entity, array $data)
+    private function transformPostalAddress(BarOrPubEntity $entity, array $data)
     {
         if (!isset($data['addr'])) {
             return;
@@ -73,16 +113,8 @@ class BarOrPub
         $postalAddress = new PostalAddress();
         $postalAddress->setId($data['id']);
         $addr = $data['addr'];
-        if (isset($addr['housenumber']) || isset($addr['street'])) {
-            $parts = [];
-            if (isset($addr['housenumber'])) {
-                $parts[] = $addr['housenumber'];
-            }
-            if (isset($addr['street'])) {
-                $parts[] = $addr['street'];
-            }
-
-            $postalAddress->setStreetAddress(implode(' ', $parts));
+        if (isset($addr['housenumber']) && isset($addr['street'])) {
+            $postalAddress->setStreetAddress($addr['housenumber'].' '.$addr['street']);
         }
 
         if (isset($addr['city'])) {
