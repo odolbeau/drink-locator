@@ -6,7 +6,7 @@ use Dunglas\ApiBundle\Api\ResourceInterface;
 use Dunglas\ApiBundle\Model\DataProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use DrinkLocator\Entity\BarOrPub;
-use DrinkLocator\Search\Engine;
+use DrinkLocator\Elasticsearch\Engine;
 use DrinkLocator\Exception\NotFoundException;
 
 /**

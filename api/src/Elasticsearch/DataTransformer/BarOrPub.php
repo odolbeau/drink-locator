@@ -1,6 +1,6 @@
 <?php
 
-namespace DrinkLocator\Search\DataTransformer;
+namespace DrinkLocator\Elasticsearch\DataTransformer;
 
 use Elastica\Document;
 use DrinkLocator\Entity\BarOrPub as BarOrPubEntity;

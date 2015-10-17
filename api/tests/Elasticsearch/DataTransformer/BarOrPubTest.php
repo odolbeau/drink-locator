@@ -1,9 +1,9 @@
 <?php
 
-namespace DrinkLocator\Search\DataTransformer;
+namespace DrinkLocator\Elasticsearch\DataTransformer;
 
 use Prophecy\Argument;
-use DrinkLocator\Search\DataTransformer\BarOrPub;
+use DrinkLocator\Elasticsearch\DataTransformer\BarOrPub;
 use DrinkLocator\Entity\BarOrPub as BarOrPubEntity;
 use Elastica\Document;
 use DrinkLocator\Entity\GeoCoordinates;
@@ -15,7 +15,7 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
     {
         $mapper = new BarOrPub();
 
-        $this->assertInstanceOf('DrinkLocator\Search\DataTransformer\BarOrPub', $mapper);
+        $this->assertInstanceOf('DrinkLocator\Elasticsearch\DataTransformer\BarOrPub', $mapper);
     }
 
     public function test_transform()

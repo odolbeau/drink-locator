@@ -1,9 +1,9 @@
 <?php
 
-namespace DrinkLocator\Search;
+namespace DrinkLocator\Elasticsearch;
 
 use Prophecy\Argument;
-use DrinkLocator\Search\Engine;
+use DrinkLocator\Elasticsearch\Engine;
 use Elastica\Document;
 use DrinkLocator\Entity\BarOrPub;
 use DrinkLocator\Entity\GeoCoordinates;
@@ -15,10 +15,10 @@ class EngineTest extends \PHPUnit_Framework_TestCase
     {
         $searchEngine = new Engine(
             $this->prophesize('Elastica\Type')->reveal(),
-            $this->prophesize('DrinkLocator\Search\DataTransformer\BarOrPub')->reveal()
+            $this->prophesize('DrinkLocator\Elasticsearch\DataTransformer\BarOrPub')->reveal()
         );
 
-        $this->assertInstanceOf('DrinkLocator\Search\Engine', $searchEngine);
+        $this->assertInstanceOf('DrinkLocator\Elasticsearch\Engine', $searchEngine);
     }
 
     public function test_find_one()
@@ -58,7 +58,7 @@ class EngineTest extends \PHPUnit_Framework_TestCase
             ->willReturn($document)
         ;
 
-        $dataTransformer = $this->prophesize('DrinkLocator\Search\DataTransformer\BarOrPub');
+        $dataTransformer = $this->prophesize('DrinkLocator\Elasticsearch\DataTransformer\BarOrPub');
         $dataTransformer
             ->transform(Argument::exact($document))
             ->shouldBeCalled()

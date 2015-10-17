@@ -1,9 +1,9 @@
 <?php
 
-namespace DrinkLocator\Search;
+namespace DrinkLocator\Elasticsearch;
 
 use Elastica\Type;
-use DrinkLocator\Search\DataTransformer\BarOrPub;
+use DrinkLocator\Elasticsearch\DataTransformer\BarOrPub;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Elastica\Exception\NotFoundException as ElasticaNotFoundException;

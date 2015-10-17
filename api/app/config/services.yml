@@ -5,7 +5,7 @@ services:
         tags:  [ { name: "api.data_provider", priority: 1 } ]
 
     search.engine:
-        class: DrinkLocator\Search\Engine
+        class: DrinkLocator\Elasticsearch\Engine
         arguments: [ "@elasticsearch.bar_or_pub.type", "@data_transformer.bar_or_pub", "@monolog.logger.search" ]
 
     elasticsearch.bar_or_pub.type:
@@ -24,7 +24,7 @@ services:
         arguments: [{ "host": "%elasticsearch_host%", "port": "%elasticsearch_port%" }]
 
     data_transformer.bar_or_pub:
-        class: DrinkLocator\Search\DataTransformer\BarOrPub
+        class: DrinkLocator\Elasticsearch\DataTransformer\BarOrPub
         public: false
 
     # Monolog
