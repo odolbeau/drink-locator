@@ -21,7 +21,7 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
     public function test_transform()
     {
         $document = Document::create([
-            'id' => '702916141',
+            'id' => 702916141,
             'lat' => '48.8567788',
             'lon' => '2.3558116',
             'addr' => [
@@ -35,10 +35,12 @@ class BarOrPubTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $coordinates = new GeoCoordinates();
+        $coordinates->setId(702916141);
         $coordinates->setLatitude('48.8567788');
         $coordinates->setLongitude('2.3558116');
 
         $postalAddress = new PostalAddress();
+        $postalAddress->setId(702916141);
         $postalAddress->setStreetAddress('4 Rue du Bourg Tibourg');
 
         $expectedBarOrPub = new BarOrPubEntity();
